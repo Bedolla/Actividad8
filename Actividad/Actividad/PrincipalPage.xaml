@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Actividad.PrincipalPage">
+
+    <StackLayout>
+        <Frame
+            BackgroundColor="#2196F3"
+            Padding="24"
+            CornerRadius="0">
+            <Label
+                Text="Actividad 8"
+                HorizontalTextAlignment="Center"
+                TextColor="White"
+                FontSize="36" />
+        </Frame>
+        <Label Text="Uso y aplicabilidad de" FontSize="Title" Padding="30,10,30,10" />
+        <Label Text="* StackLayout" FontSize="16" Padding="30,0,30,0" />
+        <Label Text="* Label" FontSize="16" Padding="30,0,30,0" />
+        <Label Text="* Entry" FontSize="16" Padding="30,0,30,0" />
+        <Label Text="* Button" FontSize="16" Padding="30,0,30,0" />
+
+        <StackLayout Orientation="Horizontal">
+            <StackLayout
+                Orientation="Vertical"
+                Padding="24,10,3,10">
+                <Label FontSize="16" Text="Valor uno" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="FillAndExpand"
+                Padding="0, 0, 24, 0">
+                <Entry
+                    x:Name="EntryValorUno"
+                    Placeholder="Ingrese el primer valor"
+                    ClearButtonVisibility="WhileEditing"
+                    Keyboard="Numeric" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Vertical" Padding="24,10,5,10">
+                <Label FontSize="16" Text="Valor dos" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand"
+                         Padding="0, 0, 24, 0">
+                <Entry x:Name="EntryValorDos"
+                       Placeholder="Ingrese el segundo valor"
+                       ClearButtonVisibility="WhileEditing"
+                       Keyboard="Numeric" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                Padding="24, 0, 2.5, 2.5">
+                <Button
+                    Text="Sumar"
+                    FontSize="Medium"
+                    WidthRequest="{Binding Path=Width, Source={x:Reference ButtonMultiplicar}}"
+                    Clicked="Operacion_OnClicked" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                Padding="2.5, 0, 24, 2.5">
+                <Button
+                    Text="Restar"
+                    FontSize="Medium"
+                    WidthRequest="{Binding Path=Width, Source={x:Reference ButtonMultiplicar}}"
+                    Clicked="Operacion_OnClicked" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                Padding="24, 2.5, 2.5, 0">
+                <Button
+                    x:Name="ButtonMultiplicar"
+                    Text="Multiplicar"
+                    FontSize="Medium"
+                    Clicked="Operacion_OnClicked" />
+            </StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                Padding="2.5, 2.5, 24, 0">
+                <Button
+                    Text="Dividir"
+                    FontSize="Medium"
+                    WidthRequest="{Binding Path=Width, Source={x:Reference ButtonMultiplicar}}"
+                    Clicked="Operacion_OnClicked" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Padding="5">
+                <Label x:Name="LabelResultado" FontSize="16" />
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
